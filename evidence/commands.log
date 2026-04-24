@@ -1,0 +1,37 @@
+$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+...
+Provisioning completed successfully.
+
+$ vagrant status
+Current machine states:
+
+default                   running (virtualbox)
+
+$ vagrant ssh
+Welcome to Ubuntu 22.04 LTS
+vagrant@ubuntu-jammy:~$
+
+$ systemctl status nginx
+nginx.service - A high performance web server and a reverse proxy server
+Active: active (running)
+
+$ curl -I http://localhost
+HTTP/1.1 200 OK
+Server: nginx
+
+$ exit
+logout
+
+$ curl http://127.0.0.1:8080
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vagrant VM Test</title>
+</head>
+<body>
+    <h1>Домашнее задание 1</h1>
+    <p>Похлестов Никита</p>
+</body>
+</html>
